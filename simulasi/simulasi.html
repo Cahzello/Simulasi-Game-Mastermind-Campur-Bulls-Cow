@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tubes Analgo - Mastermind AI</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Tambahan CSS sedikit agar rapi */
+        .row {
+            display: flex;
+            margin-bottom: 5px;
+            gap: 5px;
+        }
+
+        .box {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ccc;
+            font-weight: bold;
+        }
+
+        .info {
+            margin-top: 10px;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="padding: 20px;">
+        <h1>Simulasi Game Mastermind (AI Solver)</h1>
+
+        <div style="margin-bottom: 20px; padding: 10px; border: 1px solid #333;">
+            <h3>1. Tentukan Kunci Jawaban</h3>
+            <label for="kunci">Kunci (Rahasia):</label>
+            <input type="text" id="kunci" value="1234" maxlength="4">
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <h3>2. Mode Manusia (Coba Tebak Sendiri)</h3>
+            <label for="guess">Masukkan tebakan:</label>
+            <input type="text" id="guess" maxlength="4">
+            <button onclick="handleManualGuess()">Cek Manual</button>
+        </div>
+
+        <div style="margin-bottom: 20px; padding: 10px; background-color: #f0f0f0;">
+            <h3>3. Mode Simulasi AI (Greedy + Minimax)</h3>
+            <p>Biarkan komputer memecahkan kuncinya.</p>
+            <button onclick="startSimulation()">Mulai Simulasi AI</button>
+            <div id="statusAI" class="info"></div>
+        </div>
+
+        <h3>Riwayat Tebakan:</h3>
+        <div id="jawaban"></div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>
