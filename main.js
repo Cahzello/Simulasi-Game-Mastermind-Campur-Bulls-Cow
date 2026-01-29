@@ -26,7 +26,7 @@ function checkGuess(){
             answer = appendAnswer(tebakan[i], "lightgreen");
             div.appendChild(answer);
         }
-        else if(tebakan[i] != kunciJawaban[i] && kunciJawaban.includes(tebakan[i])){
+        else if (tebakan[i] != kunciJawaban[i] && kunciJawaban.indexOf(tebakan[i]) !== -1) {
             answer = appendAnswer(tebakan[i], "yellow");
             div.appendChild(answer);
         }
